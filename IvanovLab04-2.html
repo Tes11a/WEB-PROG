@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Лабораторна робота 4.1 - Горизонтальна анімація тексту">
+    <meta name="keywords" content="анімація, текст, рух, CSS, HTML">
+    <title>IvanovLab04-2 - Горизонтальна анімація</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        .marquee {
+            height: 60px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            margin: 5px 0;
+            padding: 0 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+        }
+        
+        /* 1. Текст коливається з боку в бік */
+        .marquee-1 {
+            background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .text-1 {
+            animation: swing 3s ease-in-out infinite alternate;
+            position: absolute;
+        }
+        
+        @keyframes swing {
+            0% { transform: translateX(-50px); }
+            100% { transform: translateX(50px); }
+        }
+        
+        /* 2. Текст пробігає справа наліво та з'являється знову */
+        .marquee-2 {
+            background: linear-gradient(45deg, #45B7D1, #96CEB4);
+        }
+        
+        .text-2 {
+            animation: scrollRightToLeft 8s linear infinite;
+            white-space: nowrap;
+            position: absolute;
+        }
+        
+        @keyframes scrollRightToLeft {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        /* 3. Текст пробігає зліва направо та зупиняється */
+        .marquee-3 {
+            background: linear-gradient(45deg, #FAD02E, #BB8FCE);
+        }
+        
+        .text-3 {
+            animation: scrollLeftToRightStop 6s ease-in-out 1;
+            white-space: nowrap;
+            position: absolute;
+        }
+        
+        @keyframes scrollLeftToRightStop {
+            0% { transform: translateX(-100%); }
+            70% { transform: translateX(0); }
+            100% { transform: translateX(0); }
+        }
+        
+        /* 4. Два рядки з різними затримками */
+        .marquee-4 {
+            background: linear-gradient(45deg, #58B19F, #FD7272);
+        }
+        
+        .text-4 {
+            animation: scrollDelay1 10s linear infinite;
+            animation-delay: 0s;
+            white-space: nowrap;
+            position: absolute;
+        }
+        
+        .marquee-5 {
+            background: linear-gradient(45deg, #82589F, #F97F51);
+        }
+        
+        .text-5 {
+            animation: scrollDelay2 12s linear infinite;
+            animation-delay: 2s;
+            white-space: nowrap;
+            position: absolute;
+        }
+        
+        @keyframes scrollDelay1 {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        @keyframes scrollDelay2 {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
+</head>
+<body>
+    <!-- 1. Текст коливається з боку в бік -->
+    <div class="marquee marquee-1">
+        <div class="text-1">🚀 Ласкаво просимо до нашої групи 303-ТН! 🎓</div>
+    </div>
+    
+    <!-- 2. Текст пробігає справа наліво -->
+    <div class="marquee marquee-2">
+        <div class="text-2">💻 Ми вивчаємо: HTML, CSS, JavaScript, Python, Java та багато іншого! 👨‍💻</div>
+    </div>
+    
+    <!-- 3. Текст пробігає зліва направо та зупиняється -->
+    <div class="marquee marquee-3">
+        <div class="text-3">🏆 Наші досягнення: власні проекти, активна участь у конкурсах! 🏅</div>
+    </div>
+    
+    <!-- 4. Два рядки з різними затримками -->
+    <div class="marquee marquee-4">
+        <div class="text-4">📚 Навчання + Практика + Командна робота = Успіх у програмуванні! ✨</div>
+    </div>
+    
+    <div class="marquee marquee-5">
+        <div class="text-5">🌟 Майбутнє за технологіями - ми будуємо його вже сьогодні! 💫</div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 20px; padding: 20px; background: #f8f9fa;">
+        <p><strong>Студент групи 303-ТН Іванов А.Р.</strong></p>
+        <p><em>Лабораторна робота №4.1 - Горизонтальна анімація тексту</em></p>
+    </div>
+</body>
+</html>
