@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Лабораторна робота №2 - Особиста сторінка з емблемою">
+    <meta name="keywords" content="лабораторна, емблема, студент, хобі, програмування">
+    <title>IvanovLab02-3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        
+        h1, h2 {
+            color: #2c3e50;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        
+        .program {
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            margin: 15px 0;
+        }
+        
+        .signature {
+            text-align: right;
+            font-style: italic;
+            margin-top: 30px;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+        }
+        
+        .emblem {
+            display: block;
+            margin: 20px auto;
+            border: 2px solid #3498db;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Про себе</h1>
+    <p>Мене звати Іванов Артур. Я студент Національного університету «Полтавська політехніка імені Юрія Кондратюка» <u><b> Навчаюся за спеціальністю "Комп'ютерні науки"</b></u> </p>
+    
+    <p>У вільний час люблю читати книжки та вивчати нові мови програмування. Вважаю, що постійне навчання - це ключ до успіху.</p>
+    
+    <h1>Моє хобі</h1>
+    
+    <!-- Емблема -->
+    <img src="emblem.jpg" alt="Моя емблема" class="emblem" width="400" height="250">
+    
+    <p>Одне з моїх хобі - це вивчання нових мов програмування, та вивчання англійської та польської мови.</p>
+    
+    <p>Також я захоплююсь <i><b>фотографією</b></i>, обожнюю подорожувати різними містами та країнами з друзями.</p>
+    
+    <h2>Програмування</h2>
+    <p>Ось невеликий приклад коду на мові Python, яку я зараз вивчаю:</p>
+    
+    <div class="program">
+def calculate_factorial(n):
+    """
+    Функція для обчислення факторіалу числа
+    """
+    if n == 0 or n == 1:
+        return 1
+    else:
+        result = 1
+        for i in range(2, n + 1):
+            result *= i
+        return result
+
+# Отримання числа від користувача
+number = int(input("Введіть число для обчислення факторіалу: "))
+
+# Обчислення та виведення результату
+factorial_result = calculate_factorial(number)
+print(f"Факторіал числа {number} дорівнює: {factorial_result}")
+    </div>
+    
+    <div class="signature">
+        <em>Студент групи <b>303-ТН</b> Іванов А.Р.</em>
+    </div>
+</body>
+</html>
