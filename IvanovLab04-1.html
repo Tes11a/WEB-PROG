@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Рядок, що біжить</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #2c3e50, #4ca1af);
+            margin: 0;
+            padding: 0;
+        }
+        
+        .marquee-bar {
+            height: 50px;
+            width: 90%;
+            margin: 20px auto;
+            background-color: #1a237e;
+            color: #ffffff;
+            font-family: 'Courier New', monospace;
+            font-size: 22px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .marquee-text {
+            white-space: nowrap;
+            animation: marquee 8s linear infinite;
+            padding-left: 100%;
+        }
+        
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
+</head>
+<body>
+    <div class="marquee-bar">
+        <div class="marquee-text">
+            🚀 Ласкаво просимо на сторінку студента групи 303-ТН! Цей текст біжить зліва направо. 🎓
+        </div>
+    </div>
+    
+    <div style="text-align: center; color: white; font-family: Arial; margin-top: 50px;">
+        <p><strong>Студент групи 303-ТН Іванов А.Р.</strong></p>
+    </div>
+</body>
+</html>

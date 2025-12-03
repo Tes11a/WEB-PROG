@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Геометричні фігури з посиланнями</title>
+</head>
+<body>
+    <center>
+        <h1>Навігація через геометричні фігури</h1>
+        
+        <!-- Карта з геометричними фігурами -->
+        <map name="map_geometry">
+            <!-- Коло -->
+            <area shape="circle" coords="100,100,50" href="IvanovLab01-9.htm" 
+                  title="Особиста сторінка студента" target="_blank">
+            
+            <!-- Прямокутник -->
+            <area shape="rect" coords="180,60,280,140" href="IvanovLab05-3.htm" 
+                  title="Мої гіперпосилання" target="_blank">
+            
+            <!-- Трикутник -->
+            <area shape="poly" coords="350,100,400,60,400,140" href="IvanovLab06-3.htm" 
+                  title="Моя Батьківщина" target="_blank">
+            
+            <!-- Ромб -->
+            <area shape="poly" coords="450,100,500,60,550,100,500,140" href="IvanovLab05-1.htm" 
+                  title="Розклад занять" target="_blank">
+        </map>
+        
+        <!-- Зображення з геометричними фігурами -->
+        <img src="geometric_shapes.png" alt="Геометричні фігури" width="400" height="200" border="1" usemap="#map_geometry">
+        
+        <br><br>
+        
+        <table border="1" cellpadding="10">
+            <tr>
+                <th>Фігура</th>
+                <th>Колір</th>
+                <th>Посилання на</th>
+            </tr>
+            <tr>
+                <td>● Коло</td>
+                <td bgcolor="#FF6B6B">Червоний</td>
+                <td><a href="IvanovLab01-9.html">Особиста сторінка</a></td>
+            </tr>
+            <tr>
+                <td>■ Квадрат</td>
+                <td bgcolor="#4ECDC4">Блакитний</td>
+                <td><a href="IvanovLab05-3.html">Гіперпосилання</a></td>
+            </tr>
+            <tr>
+                <td>▲ Трикутник</td>
+                <td bgcolor="#FFD166">Жовтий</td>
+                <td><a href="IvanovLab06-3.html">Батьківщина</a></td>
+            </tr>
+            <tr>
+                <td>◆ Ромб</td>
+                <td bgcolor="#06D6A0">Зелений</td>
+                <td><a href="IvanovLab05-1.html">Розклад</a></td>
+            </tr>
+        </table>
+        
+        <br>
+        
+        
+        <hr>
+        <p><b>Студент: Іванов Артур, група 303-ТН</b></p>
+        <p>Лабораторна робота №6, завдання 4</p>
+    </center>
+</body>
+</html>

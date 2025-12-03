@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Лабораторна робота №3 - Особиста сторінка з емблемою">
+    <meta name="keywords" content="лабораторна, емблема, студент, хобі, програмування, графіка">
+    <title>IvanovLab03-3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        
+        h1, h2 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        
+        h1 {
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+        }
+        
+        .program {
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            margin: 15px 0;
+            border-radius: 5px;
+        }
+        
+        .signature {
+            text-align: center;
+            font-style: italic;
+            margin-top: 30px;
+            border-top: 1px solid #ccc;
+            padding-top: 10px;
+            color: #666;
+        }
+        
+        .emblem-container {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .emblem {
+            border: 5px solid #3498db;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            width: 350px;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .emblem-caption {
+            margin-top: 10px;
+            font-style: italic;
+            color: #666;
+        }
+        
+        .highlight {
+            font-weight: bold;
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Про себе</h2>
+    <p>Мене звати <span class="highlight">Іванов Артур</span>. Я студент Національного університету «Полтавська політехніка імені Юрія Кондратюка» <u><b>Навчаюся за спеціальністю "Комп'ютерні науки"</b></u>.</p>
+    
+    <p>У вільний час люблю читати книжки та вивчати нові мови програмування. Вважаю, що постійне навчання - це ключ до успіху в IT-сфері.</p>
+    
+    <h2>Моє хобі</h2>
+    
+    <!-- Емблема з атрибутами -->
+    <div class="emblem-container">
+        <img src="emblem.jpg" 
+             alt="Моя персональна емблема 'Code Explorer'" 
+             class="emblem" 
+             width="350" 
+             height="250"
+             border="5"
+             title="Емблема створина в Paint та конвертована в JPG">
+        <p class="emblem-caption">Моя емблема "Code Explorer" (створена в Paint, конвертована з BMP в JPG)</p>
+    </div>
+    
+    <p>Одне з моїх хобі - це вивчання нових мов програмування, та вивчання англійської та польської мови.</p>
+    
+    <p>Також я захоплююсь <i><b>фотографією</b></i>, обожнюю подорожувати різними містами та країнами з друзями.</p>
+    
+    <h2>Програмування</h2>
+    <p>Ось невеликий приклад коду на мові Python, яку я зараз вивчаю:</p>
+    
+    <div class="program">
+def calculate_factorial(n):
+    """
+    Функція для обчислення факторіалу числа
+    """
+    if n == 0 or n == 1:
+        return 1
+    else:
+        result = 1
+        for i in range(2, n + 1):
+            result *= i
+        return result
+
+# Отримання числа від користувача
+number = int(input("Введіть число для обчислення факторіалу: "))
+
+# Обчислення та виведення результату
+factorial_result = calculate_factorial(number)
+print(f"Факторіал числа {number} дорівнює: {factorial_result}")
+    </div>
+    
+    <div class="signature">
+        <em>Студент групи <b>303-ТН</b> Іванов А.Р.</em>
+        <br>
+        <small>Лабораторна робота №3 - Використання графіки у HTML-документах</small>
+    </div>
+</body>
+</html>
