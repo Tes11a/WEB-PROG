@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма замовлення товару</title>
+    <style>
+        body {
+            background-color: #a2ffff;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            color: #333;
+        }
+        
+        .form-container {
+            width: 600px;
+            margin: 0 auto;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+        }
+        
+        h2 {
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        input[type="text"],
+        select,
+        textarea {
+            border: 1px solid #999;
+            padding: 4px;
+            font-size: 14px;
+            background-color: #fff;
+            margin: 3px 0;
+        }
+        
+        textarea {
+            width: 100%;
+            font-family: Arial, sans-serif;
+        }
+        
+        .section {
+            margin: 15px 0;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #eee;
+        }
+        
+        .section-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #555;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+        
+        .buttons {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        input[type="submit"],
+        input[type="reset"] {
+            padding: 8px 20px;
+            background-color: #666;
+            color: white;
+            border: 1px solid #555;
+            cursor: pointer;
+            font-size: 14px;
+            margin: 0 5px;
+        }
+        
+        .footer {
+            font-size: 12px;
+            color: #777;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .field-group {
+            margin-bottom: 10px;
+        }
+        
+        .field-group label {
+            display: inline-block;
+            width: 200px;
+            font-size: 14px;
+            vertical-align: top;
+            padding-top: 5px;
+        }
+        
+        select[multiple] {
+            height: 120px;
+            width: 300px;
+        }
+        
+        .result {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #fff;
+            border: 1px solid #eee;
+            display: none;
+        }
+        
+        .result-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #008000;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Форма замовлення товару</h2>
+        
+        <form id="orderForm">
+            <div class="section">
+                <div class="section-title">Платіжна інформація</div>
+                
+                <div class="field-group">
+                    <label>Номер банківського рахунку:</label>
+                    <input type="text" name="account" size="30" placeholder="Введіть номер рахунку">
+                </div>
+                
+                <div class="field-group">
+                    <label>Особистий номер користувача:</label>
+                    <input type="text" name="personal_id" size="20" placeholder="Введіть ваш ID">
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Вибір товарів</div>
+                
+                <div class="field-group">
+                    <label>Список товарів:</label>
+                    <select name="products" multiple>
+                        <option value="laptop">Ноутбук (40 000 грн)</option>
+                        <option value="phone">Смартфон (55 000 грн)</option>
+                        <option value="tablet">Планшет (14 000 грн)</option>
+                        <option value="headphones">Навушники (9 000 грн)</option>
+                        <option value="mouse">Мишка (4 500 грн)</option>
+                        <option value="keyboard">Клавіатура (2 700 грн)</option>
+                        <option value="monitor">Монітор (12 000 грн)</option>
+                    </select>
+                    <div style="font-size: 12px; color: #777; margin-top: 5px;">
+                        (Для вибору декількох товарів утримуйте Ctrl)
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Спосіб оплати</div>
+                
+                <div class="field-group">
+                    <label>Вид оплати:</label>
+                    <input type="radio" name="payment" value="cash" checked> Готівковий розрахунок
+                    <input type="radio" name="payment" value="card"> Безготівковий розрахунок
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Додаткова інформація</div>
+                
+                <div class="field-group">
+                    <label>Бажаю отримати:</label>
+                    <input type="checkbox" name="info_balance" value="yes"> Дані про залишки на рахунку<br>
+                    <input type="checkbox" name="info_payments" value="yes" style="margin-left: 200px;"> Список останніх виплат по рахунку
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Коментарі користувача</div>
+                
+                <div class="field-group">
+                    <label>Довільні коментарі:</label>
+                    <textarea name="comments" rows="4" cols="40" placeholder="Введіть ваші коментарі..."></textarea>
+                </div>
+            </div>
+            
+            <div class="buttons">
+                <input type="reset" value="Скасувати">
+                <input type="submit" value="Оформити замовлення">
+            </div>
+        </form>
+        
+        <div class="result" id="orderResult">
+            <div class="result-title">Ваше замовлення прийнято!</div>
+            <div id="resultContent"></div>
+        </div>
+        
+        <div class="footer">
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('orderForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Збираємо дані з форми
+            var account = document.getElementsByName('account')[0].value;
+            var personalId = document.getElementsByName('personal_id')[0].value;
+            
+            var productsSelect = document.getElementsByName('products')[0];
+            var selectedProducts = [];
+            for (var i = 0; i < productsSelect.options.length; i++) {
+                if (productsSelect.options[i].selected) {
+                    selectedProducts.push(productsSelect.options[i].text);
+                }
+            }
+            
+            var paymentType = document.querySelector('input[name="payment"]:checked').value;
+            
+            var infoBalance = document.getElementsByName('info_balance')[0].checked;
+            var infoPayments = document.getElementsByName('info_payments')[0].checked;
+            
+            var comments = document.getElementsByName('comments')[0].value;
+            
+            // Формуємо результат
+            var resultHTML = '<p><strong>Номер рахунку:</strong> ' + (account || 'не вказано') + '</p>';
+            resultHTML += '<p><strong>Особистий номер:</strong> ' + (personalId || 'не вказано') + '</p>';
+            
+            resultHTML += '<p><strong>Вибрані товари:</strong>';
+            if (selectedProducts.length > 0) {
+                resultHTML += '<ul>';
+                selectedProducts.forEach(function(product) {
+                    resultHTML += '<li>' + product + '</li>';
+                });
+                resultHTML += '</ul>';
+            } else {
+                resultHTML += ' не вибрано жодного товару</p>';
+            }
+            
+            resultHTML += '<p><strong>Спосіб оплати:</strong> ' + 
+                          (paymentType === 'cash' ? 'Готівковий розрахунок' : 'Безготівковий розрахунок') + '</p>';
+            
+            resultHTML += '<p><strong>Додаткова інформація:</strong>';
+            if (infoBalance || infoPayments) {
+                resultHTML += '<ul>';
+                if (infoBalance) resultHTML += '<li>Дані про залишки на рахунку</li>';
+                if (infoPayments) resultHTML += '<li>Список останніх виплат по рахунку</li>';
+                resultHTML += '</ul>';
+            } else {
+                resultHTML += ' не вказано</p>';
+            }
+            
+            if (comments.trim()) {
+                resultHTML += '<p><strong>Ваші коментарі:</strong> ' + comments + '</p>';
+            }
+            
+            // Показуємо результат
+            document.getElementById('resultContent').innerHTML = resultHTML;
+            document.getElementById('orderResult').style.display = 'block';
+            
+            // Прокручуємо до результату
+            document.getElementById('orderResult').scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        // Обробка кнопки "Скасувати"
+        document.querySelector('input[type="reset"]').addEventListener('click', function() {
+            document.getElementById('orderResult').style.display = 'none';
+        });
+    </script>
+</body>
+</html>

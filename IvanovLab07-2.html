@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Тестова форма</title>
+    <style>
+        body {
+            background-color: #a2ffff;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            color: #333;
+        }
+        
+        .form-container {
+            width: 600px;
+            margin: 0 auto;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+        }
+        
+        h2 {
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        input[type="text"],
+        select,
+        textarea {
+            border: 1px solid #999;
+            padding: 4px;
+            font-size: 14px;
+            background-color: #fff;
+            margin: 3px 0;
+        }
+        
+        textarea {
+            width: 100%;
+            font-family: Arial, sans-serif;
+        }
+        
+        .section {
+            margin: 15px 0;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #eee;
+        }
+        
+        .section-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #555;
+        }
+        
+        .buttons {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        input[type="submit"],
+        input[type="reset"] {
+            padding: 8px 20px;
+            background-color: #666;
+            color: white;
+            border: 1px solid #555;
+            cursor: pointer;
+            font-size: 14px;
+            margin: 0 5px;
+        }
+        
+        input[type="file"] {
+            font-size: 13px;
+        }
+        
+        .footer {
+            font-size: 12px;
+            color: #777;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Форма з усіма типами елементів</h2>
+        <form action="#" method="get" onsubmit="alert('Форма відправлена!'); return false;">
+            
+            <div class="section">
+                <div class="section-title">1. Текстове поле</div>
+                ПІБ: <input type="text" name="fio" size="30" value="Петров Петро">
+            </div>
+            
+            <div class="section">
+                <div class="section-title">2. Текстова область</div>
+                Коментар:<br>
+                <textarea name="comment" rows="3" cols="50">Введіть коментар...</textarea>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">3. Список</div>
+                Місто:
+                <select name="city">
+                    <option>Київ</option>
+                    <option>Полтава</option>
+                    <option>Одеса</option>
+                    <option>Харків</option>
+                </select>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">4. Прапорці</div>
+                Мови програмування:<br>
+                <input type="checkbox" name="lang" value="html"> HTML<br>
+                <input type="checkbox" name="lang" value="js"> C++<br>
+                <input type="checkbox" name="lang" value="python"> Python
+            </div>
+            
+            <div class="section">
+                <div class="section-title">5. Радіокнопки</div>
+                Освітній ступінь:<br>
+                <input type="radio" name="education" value="bachelor"> Бакалавр<br>
+                <input type="radio" name="education" value="master"> Магістр<br>
+                <input type="radio" name="education" value="phd"> Доктор
+            </div>
+            
+            <div class="section">
+                <div class="section-title">6. Пароль</div>
+                Пароль: <input type="password" name="pass" size="15">
+            </div>
+            
+            <div class="section">
+                <div class="section-title">7. Файл</div>
+                Завантажити: <input type="file" name="file">
+            </div>
+            
+            <div class="buttons">
+                <input type="submit" value="Надіслати">
+                <input type="reset" value="Скинути">
+                <input type="button" value="Довідка" onclick="alert('Це тестова форма')">
+            </div>
+            
+        </form>
+        
+        <div class="footer">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Анкета користувача</title>
+    <style>
+        body {
+            background-color: #a2ffff;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            color: #333;
+        }
+        
+        .form-container {
+            width: 600px;
+            margin: 0 auto;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+        }
+        
+        h2 {
+            font-size: 18px;
+            text-align: center;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea {
+            border: 1px solid #999;
+            padding: 4px;
+            font-size: 14px;
+            background-color: #fff;
+            margin: 3px 0;
+        }
+        
+        textarea {
+            width: 100%;
+            font-family: Arial, sans-serif;
+        }
+        
+        .section {
+            margin: 15px 0;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #eee;
+        }
+        
+        .section-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #555;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+        
+        .buttons {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        input[type="submit"],
+        input[type="reset"] {
+            padding: 8px 20px;
+            background-color: #666;
+            color: white;
+            border: 1px solid #555;
+            cursor: pointer;
+            font-size: 14px;
+            margin: 0 5px;
+        }
+        
+        .footer {
+            font-size: 12px;
+            color: #777;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .field-group {
+            margin-bottom: 10px;
+        }
+        
+        .field-group label {
+            display: inline-block;
+            width: 200px;
+            font-size: 14px;
+            vertical-align: top;
+            padding-top: 5px;
+        }
+        
+        .birthdate-group {
+            display: inline-block;
+            margin-left: 10px;
+        }
+        
+        .birthdate-group select {
+            width: 80px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Анкета користувача - 1 етап реєстрації</h2>
+        <form action="#" method="get" onsubmit="alert('Форма відправлена!'); return false;">
+            
+            <div class="section">
+                <div class="section-title">Особиста інформація</div>
+                
+                <div class="field-group">
+                    <label>Прізвище:</label>
+                    <input type="text" name="surname" size="30" placeholder="Введіть прізвище">
+                </div>
+                
+                <div class="field-group">
+                    <label>Ім'я:</label>
+                    <input type="text" name="name" size="30" placeholder="Введіть ім'я">
+                </div>
+                
+                <div class="field-group">
+                    <label>По батькові:</label>
+                    <input type="text" name="patronymic" size="30" placeholder="Введіть по батькові">
+                </div>
+                
+                <div class="field-group">
+                    <label>Число і рік народження:</label>
+                    <div class="birthdate-group">
+                        День: 
+                        <select name="birth_day">
+                            <option value="">--</option>
+                            <script>
+                                for (var i = 1; i <= 31; i++) {
+                                    document.write('<option value="' + i + '">' + i + '</option>');
+                                }
+                            </script>
+                        </select>
+                        
+                        Місяць: 
+                        <select name="birth_month">
+                            <option value="">--</option>
+                            <option value="1">Січень</option>
+                            <option value="2">Лютий</option>
+                            <option value="3">Березень</option>
+                            <option value="4">Квітень</option>
+                            <option value="5">Травень</option>
+                            <option value="6">Червень</option>
+                            <option value="7">Липень</option>
+                            <option value="8">Серпень</option>
+                            <option value="9">Вересень</option>
+                            <option value="10">Жовтень</option>
+                            <option value="11">Листопад</option>
+                            <option value="12">Грудень</option>
+                        </select>
+                        
+                        Рік: 
+                        <select name="birth_year">
+                            <option value="">----</option>
+                            <script>
+                                var currentYear = new Date().getFullYear();
+                                for (var i = currentYear; i >= 1900; i--) {
+                                    document.write('<option value="' + i + '">' + i + '</option>');
+                                }
+                            </script>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="field-group">
+                    <label>Домашня адреса:</label>
+                    <input type="text" name="home_address" size="40" placeholder="Вулиця, будинок, квартира">
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Контактна інформація</div>
+                
+                <div class="field-group">
+                    <label>Місце навчання (роботи):</label>
+                    <input type="text" name="workplace" size="40" placeholder="Назва установи або компанії">
+                </div>
+                
+                <div class="field-group">
+                    <label>Домашній (робочий) телефон:</label>
+                    <input type="tel" name="phone" size="20" placeholder="+380XXXXXXXXX">
+                </div>
+                
+                <div class="field-group">
+                    <label>E-mail:</label>
+                    <input type="email" name="email" size="30" placeholder="example@domain.com">
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-title">Наукові інтереси</div>
+                
+                <div class="field-group">
+                    <label>Область наукових інтересів:</label>
+                    <textarea name="scientific_interests" rows="4" cols="40" placeholder="Опишіть ваші наукові інтереси, напрямки досліджень..."></textarea>
+                </div>
+            </div>
+            
+            <div class="buttons">
+                <input type="reset" value="Відмінити введення">
+                <input type="submit" value="Надіслати дані та перейти до 2 етапу реєстрації">
+            </div>
+            
+        </form>
+        
+        <div class="footer">
+        </div>
+    </div>
+</body>
+</html>
